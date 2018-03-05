@@ -48,7 +48,9 @@ def set_automated_followed_pool(username, logger, logfolder, unfollow_after):
 
     except BaseException as e:
         logger.error("set_automated_followed_pool error {}".format(str(e)))
+		
 
+    #print (automatedFollowedPool)
     return automatedFollowedPool
 
 
@@ -151,11 +153,11 @@ def unfollow(browser,
                     else:
 						# this user found in our list of unfollow but is not followed
                         if follow_button.text != 'Follow':
-                            log_uncertain_unfollowed_pool(username, person, logger)
+                            log_uncertain_unfollowed_pool(username, person, logger, logfolder)
                         delete_line_from_file('{0}{1}_followedPool.csv'.format(logfolder, username),
                                               person + ",\n", logger)
                         # save any unfollowed person
-                        log_record_all_unfollowed(username, person, logger)
+                        log_record_all_unfollowed(username, person, logger, logfolder)
 
                         logger.warning(
                             '--> Cannot Unfollow From InstaPy {}'

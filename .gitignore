@@ -7,6 +7,10 @@ __pycache__/
 *$py.class
 
 quickstart.py
+quickstart-timed.py
+quickstart-location.py
+quickstart-unfollow.py
+liveimagery
 
 # C extensions
 *.so
